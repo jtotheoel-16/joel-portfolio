@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Joel Kennedy — Creative Director turned Product Designer</title>
+    <meta
+      name="description"
+      content="Portfolio of Joel Kennedy, a Creative Director turned Product Designer based in Long Beach, CA."
+    />
+    <meta name="theme-color" content="#EBF4EA" />
+    <link rel="icon" href="/images/avatar.webp" type="image/webp" />
+    <link rel="preload" href="/fonts/suisse-bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/perfectly-nineties-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/video/sizzle-poster.jpg" as="image" />
+    <script>
+      // Hide build-in elements before first paint only when we will animate them in.
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('anim');
+      }
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <svg class="sr-only" aria-hidden="true" focusable="false">
+      <!-- "Gooey" filter: blurs shapes together and re-sharpens the edge so they merge like liquid. -->
+      <filter id="goo" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+        <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10" />
+      </filter>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page" id="top">
+      <div class="card">
+        <header class="site-header" data-header>
+          <div class="site-header__panel">
+          <div class="site-header__bar">
+            <a class="site-header__hello" href="#top" aria-label="Joel Kennedy, back to top">
+              <img class="site-header__avatar" src="/images/avatar.webp" alt="" width="46" height="59" />
+              <span class="site-header__greeting"><em class="serif">Hi,</em> I’m Joel</span>
+            </a>
+
+            <nav class="site-nav" aria-label="Primary">
+              <a class="nav-btn" href="#about" data-scroll-to="#about">
+                <span class="nav-btn__goo" aria-hidden="true"><span class="nav-btn__fill"></span><span class="nav-btn__drop"></span></span>
+                <span class="nav-btn__label">About</span>
+                <span class="nav-btn__arrow" aria-hidden="true"><span>↓</span></span>
+              </a>
+              <a class="nav-btn" href="https://www.linkedin.com/in/joel-kennedy-25334615/" target="_blank" rel="noopener noreferrer">
+                <span class="nav-btn__goo" aria-hidden="true"><span class="nav-btn__fill"></span><span class="nav-btn__drop"></span></span>
+                <span class="nav-btn__label">LinkedIn</span>
+                <span class="nav-btn__arrow" aria-hidden="true"><span>↗</span></span>
+              </a>
+              <a class="nav-btn" href="https://drive.google.com/file/d/19oC2WDU41yEM5U28jK7MfRxwh8qb6-EK/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <span class="nav-btn__goo" aria-hidden="true"><span class="nav-btn__fill"></span><span class="nav-btn__drop"></span></span>
+                <span class="nav-btn__label">CV</span>
+                <span class="nav-btn__arrow" aria-hidden="true"><span>↗</span></span>
+              </a>
+            </nav>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
+              <span class="menu-toggle__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            </button>
+          </div>
+
+          <div class="mobile-menu" id="mobile-menu" data-menu>
+            <div class="mobile-menu__inner">
+              <a href="#about" data-scroll-to="#about">About</a>
+              <a href="https://www.linkedin.com/in/joel-kennedy-25334615/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://drive.google.com/file/d/19oC2WDU41yEM5U28jK7MfRxwh8qb6-EK/view?usp=sharing" target="_blank" rel="noopener noreferrer">CV</a>
+            </div>
+          </div>
+          </div>
+        </header>
+
+        <main id="main">
+          <section class="sizzle" aria-label="Intro" data-reveal="scale">
+            <video
+              class="sizzle__video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              poster="/video/sizzle-poster.jpg"
+              aria-hidden="true"
+            >
+              <source src="/video/sizzle.webm" type="video/webm" />
+              <source src="/video/sizzle.mp4" type="video/mp4" />
+            </video>
+            <h1 class="sizzle__pills">
+              <span class="pill-row">
+                <span class="pill pill--emoji" data-pill aria-hidden="true">🌈</span>
+                <span class="pill" data-pill>Creative Director</span>
+              </span>
+              <span class="pill-row">
+                <span class="pill pill--serif" data-pill>turned</span>
+                <span class="pill" data-pill>Product Designer</span>
+                <span class="pill pill--emoji" data-pill aria-hidden="true">🤓</span>
+              </span>
+            </h1>
+          </section>
+
+          <section class="work" id="work" aria-labelledby="work-title">
+            <h2 class="section-title" id="work-title" data-reveal>
+              <img src="/images/icons/icon-case-studies.svg" alt="" width="32" height="32" />
+              <span>Case studies</span>
+            </h2>
+
+            <div class="work-grid">
+              <a class="case case--wide" href="#" data-case data-cursor="Video Highlights ↗" data-reveal="card">
+                <span class="case__media">
+                  <img
+                    src="/images/case-studies/video-highlights-800.webp"
+                    srcset="/images/case-studies/video-highlights-800.webp 800w, /images/case-studies/video-highlights-1600.webp 1600w"
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    alt="Video Highlights: AI-generated pizza spot videos in the Yelp app"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+              </a>
+              <a class="case case--wide" href="#" data-case data-cursor="My Lists ↗" data-reveal="card">
+                <span class="case__media">
+                  <img
+                    src="/images/case-studies/my-lists-800.webp"
+                    srcset="/images/case-studies/my-lists-800.webp 800w, /images/case-studies/my-lists-1600.webp 1600w"
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    alt="My Lists: saved restaurant lists in the Yelp app"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+              </a>
+              <a class="case" href="#" data-case data-cursor="Tattle App ↗" data-reveal="card">
+                <span class="case__media">
+                  <img
+                    src="/images/case-studies/tattle-800.webp"
+                    srcset="/images/case-studies/tattle-800.webp 800w, /images/case-studies/tattle-1600.webp 1600w"
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    alt="Tattle Tale: tattoo artist discovery app on two phones"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+              </a>
+              <a class="case" href="#" data-case data-cursor="Vesti Sandwiches ↗" data-reveal="card">
+                <span class="case__media">
+                  <img
+                    src="/images/case-studies/vesti-800.webp"
+                    srcset="/images/case-studies/vesti-800.webp 800w, /images/case-studies/vesti-1600.webp 1600w"
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    alt="Vesti Sandwiches: hands holding a deli sandwich"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+              </a>
+              <a class="case" href="#" data-case data-cursor="The Servies ↗" data-reveal="card">
+                <span class="case__media">
+                  <img
+                    src="/images/case-studies/servies-800.webp"
+                    srcset="/images/case-studies/servies-800.webp 800w, /images/case-studies/servies-1600.webp 1600w"
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    alt="The Servies: golden hand trophy"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+              </a>
+            </div>
+          </section>
+
+          <section class="about" id="about" aria-labelledby="about-title" data-reveal>
+            <h2 class="about__title" id="about-title">A born <em class="serif">hybrid</em></h2>
+            <div class="about__body">
+              <div class="about__copy" data-reveal-stagger>
+                <p>As someone of mixed heritage, you could say Joel was born a hybrid.</p>
+                <p>
+                  Half analytical thinker, half creative tinkerer. During his decade as a Creative Director in advertising, he
+                  straddled the line between strategy and execution, delivering thoughtful, award-winning work for brands like
+                  Netflix, Under Armour, Nike, and the NFL.
+                </p>
+                <p>
+                  Today as a Product Designer at Yelp, he continues to blur traditional boundaries by blending holistic vision
+                  thinking with an obsession for visual craft. From coding functional vision prototypes to fine-tuning
+                  micro-animations and architecting product frameworks, no problem is too big or small.
+                </p>
+                <p>
+                  Joel’s hybrid nature extends far beyond his career. Part gamer, part athlete, and part extroverted introvert,
+                  he’s a homebody who loves to travel and a Type A planner who likes to get his hands dirty sculpting clay. He
+                  has never quite fit neatly into a single box—which is probably why he has spent most of his life breaking out
+                  of them.
+                </p>
+              </div>
+
+              <h3 class="about__subtitle" data-reveal>He’s been recognized by</h3>
+
+              <ul class="logos" data-reveal-stagger>
+                <li>
+                  <a class="logo logo--cannes" href="https://www.lovethework.com/work-awards/campaigns/cheetle-id-762257" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/logos/cannes.webp" alt="Cannes Lions" width="64" height="80" loading="lazy" />
+                  </a>
+                </li>
+                <li>
+                  <a class="logo logo--campaign" href="https://www.campaignlive.com/article/ad-week-lightlife-tells-hilarious-new-spot/1661883" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/logos/campaign.webp" alt="Campaign US" width="159" height="31" loading="lazy" />
+                  </a>
+                </li>
+                <li>
+                  <a class="logo logo--adage" href="https://adage.com/article/small-agency-awards/small-agency-awards-2013-threshold-interactive/243370/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/logos/adage.webp" alt="Ad Age" width="130" height="43" loading="lazy" />
+                  </a>
+                </li>
+                <li>
+                  <a class="logo logo--adweek" href="https://www.adweek.com/social-marketing/yelps-first-campaign-since-2016-celebrates-restaurants-ability-to-turn-the-tables/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/logos/adweek.webp" alt="Adweek" width="135" height="60" loading="lazy" />
+                  </a>
+                </li>
+                <li>
+                  <span class="logo logo--menshealth">
+                    <img src="/images/logos/menshealth.webp" alt="Men’s Health" width="140" height="29" loading="lazy" />
+                  </span>
+                </li>
+                <li>
+                  <a class="logo logo--brandnew" href="https://underconsideration.com/inhouseinfocus/yelp/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/logos/brandnew.webp" alt="Brand New" width="159" height="33" loading="lazy" />
+                  </a>
+                </li>
+                <li>
+                  <span class="logo logo--womenshealth">
+                    <img src="/images/logos/womenshealth.webp" alt="Women’s Health" width="130" height="26" loading="lazy" />
+                  </span>
+                </li>
+                <li>
+                  <a class="logo logo--verge" href="https://www.theverge.com/news/714944/yelp-ai-stitched-videos" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/logos/verge.webp" alt="The Verge" width="135" height="30" loading="lazy" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="bites" aria-labelledby="bites-title">
+            <h2 class="section-title section-title--bites" id="bites-title" data-reveal>
+              <img src="/images/icons/icon-bites.svg" alt="" width="32" height="32" />
+              <span>Creative Bites</span>
+            </h2>
+            <div class="bites__track" data-bites data-reveal-stagger>
+              <a class="bite" href="https://docs.google.com/presentation/d/1J2h9Lrnlefb7A9q6LE00UL4coOsONCxjHbMTKve0AEY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <img src="/images/bites/designirl.webp" alt="Design IRL Toronto 2024 tote bag" width="320" height="320" loading="lazy" draggable="false" />
+              </a>
+              <a class="bite" href="https://www.adweek.com/social-marketing/yelps-first-campaign-since-2016-celebrates-restaurants-ability-to-turn-the-tables/" target="_blank" rel="noopener noreferrer">
+                <img src="/images/bites/oaxaca.webp" alt="Colorful colonial street in Oaxaca" width="320" height="320" loading="lazy" draggable="false" />
+              </a>
+              <a class="bite" href="https://www.eatvesti.com/" target="_blank" rel="noopener noreferrer">
+                <img src="/images/bites/cassava.webp" alt="Cassava logo" width="320" height="320" loading="lazy" draggable="false" />
+              </a>
+              <a class="bite" href="https://webflow.com/made-in-webflow/website/the-servies-yelp-one" target="_blank" rel="noopener noreferrer">
+                <img src="/images/bites/labubu.webp" alt="Hand-sculpted chrome bunny figure" width="320" height="320" loading="lazy" draggable="false" />
+              </a>
+              <a class="bite" href="https://docs.google.com/presentation/d/1CnHWL_NfcFcB95jpupKde0WKukOrVOmOi3auhfTxEhk/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <img src="/images/bites/tigermom.webp" alt="Tiger Mom tiger head logo" width="320" height="320" loading="lazy" draggable="false" />
+              </a>
+              <a class="bite" href="https://webflow.com/made-in-webflow/website/the-servies-yelp-one" target="_blank" rel="noopener noreferrer">
+                <img src="/images/bites/vesti.webp" alt="Vesti sandwich close-up" width="320" height="320" loading="lazy" draggable="false" />
+              </a>
+            </div>
+          </section>
+        </main>
+
+        <footer class="site-footer" data-reveal>
+          <p class="site-footer__copy">JOEL KENNEDY © 2026</p>
+          <p class="site-footer__loc"><em class="serif">Currently based in</em> <span aria-hidden="true">☼</span> <span class="site-footer__city">LONG BEACH, CA</span></p>
+        </footer>
+      </div>
+    </div>
+
+    <div class="case-cursor" aria-hidden="true" data-cursor-el><span data-cursor-label></span></div>
+  </body>
+</html>

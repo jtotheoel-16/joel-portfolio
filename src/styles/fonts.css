@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Perfectly Nineties';
+  src: url('/fonts/perfectly-nineties-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal; /* the face is italic by design; don't let the browser slant it again */
+  font-display: swap;
+}
