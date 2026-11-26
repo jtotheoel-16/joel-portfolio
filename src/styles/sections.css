@@ -10,7 +10,7 @@
 }
 
 .site-header__panel {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(235, 244, 234, 0.5));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(235, 244, 234, 0.92));
   -webkit-backdrop-filter: blur(18px) saturate(1.4);
   backdrop-filter: blur(18px) saturate(1.4);
   border-radius: 24px;
