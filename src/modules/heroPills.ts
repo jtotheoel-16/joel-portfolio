@@ -2,7 +2,7 @@ import { gsap } from 'gsap';
 import { prefersReducedMotion } from './motion';
 
 const POP_FROM = { opacity: 0, y: 28, scaleX: 0.55, scaleY: 0.35, transformOrigin: '0% 100%' };
-const POP_TO = { opacity: 1, y: 0, scaleX: 1, scaleY: 1, duration: 1.15, ease: 'elastic.out(1, 0.62)' };
+const POP_TO = { opacity: 1, y: 0, scaleX: 1, scaleY: 1, duration: 0.95, ease: 'elastic.out(1, 0.62)' };
 
 /**
  * Headline build-in over the sizzle video, read as a sentence:
@@ -24,16 +24,16 @@ export function initHeroPills(): void {
 
     gsap
       .timeline({
-        delay: 0.55,
+        delay: 0.4,
         onComplete: () => gsap.set([...rows, ...pills], { clearProps: 'transform' }),
       })
       .set(row1, { y: shift })
       .fromTo(creativeDirector, POP_FROM, POP_TO)
-      .fromTo(rainbow, POP_FROM, POP_TO, '<0.15')
-      .to(row1, { y: 0, duration: 0.9, ease: 'expo.inOut' }, '<0.75')
-      .fromTo(turned, POP_FROM, POP_TO, '-=0.3')
-      .fromTo(productDesigner, POP_FROM, POP_TO, '<0.18')
-      .fromTo(nerd, POP_FROM, POP_TO, '<0.2');
+      .fromTo(rainbow, POP_FROM, POP_TO, '<0.12')
+      .to(row1, { y: 0, duration: 0.7, ease: 'expo.inOut' }, '<0.55')
+      .fromTo(turned, POP_FROM, POP_TO, '-=0.25')
+      .fromTo(productDesigner, POP_FROM, POP_TO, '<0.14')
+      .fromTo(nerd, POP_FROM, POP_TO, '<0.15');
   };
 
   // Wait for the display fonts so pill widths and line heights are final before measuring.
