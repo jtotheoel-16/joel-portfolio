@@ -606,6 +606,81 @@ html.has-cursor .case * {
 .bite:hover img {
   transform: scale(1.05);
 }
+.bite {
+  position: relative;
+  display: block;
+}
+
+/* Hover overlay: a descriptive tag (bottom left) and, for linked bites, a ↗ button (bottom right). */
+.bite__overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px;
+  pointer-events: none;
+}
+.bite__tag,
+.bite__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  background: var(--c-white);
+  border-radius: 1000px;
+  font-size: 12px;
+  line-height: 10px;
+  letter-spacing: -0.02em;
+  color: var(--c-ink);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(14px) scale(0.85);
+  transition:
+    opacity 0.25s var(--ease-liquid),
+    transform 0.4s var(--ease-liquid),
+    background-color 0.3s var(--ease-liquid),
+    color 0.3s var(--ease-liquid);
+}
+.bite__tag {
+  padding: 0 8px;
+  font-weight: 500;
+  transform-origin: 0% 100%;
+}
+.bite__cta {
+  width: 26px;
+  font-family: var(--f-body);
+  font-weight: 700;
+  transform-origin: 100% 100%;
+}
+
+.bite:hover .bite__tag,
+.bite:hover .bite__cta,
+.bite:focus-visible .bite__tag,
+.bite:focus-visible .bite__cta {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.35s var(--ease-liquid),
+    transform 0.6s var(--ease-spring),
+    background-color 0.3s var(--ease-liquid),
+    color 0.3s var(--ease-liquid);
+}
+.bite:hover .bite__cta,
+.bite:focus-visible .bite__cta {
+  transition-delay: 0.08s;
+}
+
+/* Touch screens have no hover, so the tags are always shown there. */
+@media (hover: none) {
+  .bite__tag,
+  .bite__cta {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (min-width: 768px) {
   .bite {
     flex-basis: 320px;
