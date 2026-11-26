@@ -12,7 +12,7 @@ export function initSmoothScroll(): Lenis | null {
   if (prefersReducedMotion()) return null;
 
   lenis = new Lenis({
-    lerp: 0.085,
+    lerp: 0.12,
     wheelMultiplier: 1,
     smoothWheel: true,
   });
@@ -35,7 +35,7 @@ export function scrollToTarget(selector: string): void {
   const revealY = Number(gsap.getProperty(target, 'y')) || 0;
   const top = target.getBoundingClientRect().top + window.scrollY - revealY + headerOffset();
   if (lenis) {
-    lenis.scrollTo(top, { duration: 1.4, easing: (t) => 1 - Math.pow(1 - t, 4) });
+    lenis.scrollTo(top, { duration: 1.1, easing: (t) => 1 - Math.pow(1 - t, 4) });
   } else {
     window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
   }

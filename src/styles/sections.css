@@ -172,7 +172,8 @@
   height: 48px;
   isolation: isolate;
   border-radius: 40px;
-  transition: --arrow-w 0.55s var(--ease-liquid);
+  /* hover-out: the drop glides back into the pill first */
+  transition: --arrow-w 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .nav-btn__label {
@@ -186,7 +187,8 @@
   font-size: 12px;
   color: var(--c-ink);
   white-space: nowrap;
-  transition: color 0.35s var(--ease-liquid);
+  /* hover-out: turn black only once the fill has started fading */
+  transition: color 0.4s var(--ease-liquid) 0.35s;
 }
 
 .nav-btn__arrow {
@@ -206,17 +208,21 @@
   opacity: 0;
   transform: translate(-6px, 6px) scale(0.6);
   transition:
-    opacity 0.3s var(--ease-liquid),
-    transform 0.5s var(--ease-spring);
+    opacity 0.15s linear,
+    transform 0.3s var(--ease-liquid);
 }
 
-/* The black shapes live in one filtered layer so they merge like liquid as the drop pulls away. */
+/* The black shapes live in one filtered layer so they merge like liquid as the drop pulls away.
+   The shapes stay fully opaque; the whole layer fades, so the fade isn't cut off by the filter's threshold. */
 .nav-btn__goo {
   position: absolute;
   inset: -12px;
   z-index: -1;
   filter: url(#goo);
   pointer-events: none;
+  opacity: 0;
+  /* hover-out: fade once the drop has mostly merged back */
+  transition: opacity 0.4s var(--ease-liquid) 0.35s;
 }
 .nav-btn__fill,
 .nav-btn__drop {
@@ -229,43 +235,41 @@
 .nav-btn__fill {
   left: 12px;
   width: calc(100% - 24px - var(--arrow-w));
-  opacity: 0;
-  transform: scale(0.82);
-  transition:
-    opacity 0.35s var(--ease-liquid) 0.12s,
-    transform 0.55s var(--ease-liquid) 0.12s;
+  transform: scale(0.92);
+  transition: transform 0.5s var(--ease-liquid) 0.3s;
 }
 .nav-btn__drop {
   right: 12px;
   width: 48px;
-  opacity: 0;
-  transition: opacity 0.2s linear 0.3s;
 }
 
 .nav-btn:hover,
 .nav-btn:focus-visible {
   --arrow-w: 48px;
+  transition: --arrow-w 0.55s var(--ease-liquid);
+}
+.nav-btn:hover .nav-btn__goo,
+.nav-btn:focus-visible .nav-btn__goo {
+  opacity: 1;
+  transition: opacity 0.3s var(--ease-liquid);
+}
+.nav-btn:hover .nav-btn__fill,
+.nav-btn:focus-visible .nav-btn__fill {
+  transform: none;
+  transition: transform 0.5s var(--ease-liquid);
 }
 .nav-btn:hover .nav-btn__label,
 .nav-btn:focus-visible .nav-btn__label {
   color: var(--c-white);
-}
-.nav-btn:hover .nav-btn__fill,
-.nav-btn:focus-visible .nav-btn__fill {
-  opacity: 1;
-  transform: none;
-  transition-delay: 0s;
-}
-.nav-btn:hover .nav-btn__drop,
-.nav-btn:focus-visible .nav-btn__drop {
-  opacity: 1;
-  transition-delay: 0s;
+  transition: color 0.25s var(--ease-liquid);
 }
 .nav-btn:hover .nav-btn__arrow span,
 .nav-btn:focus-visible .nav-btn__arrow span {
   opacity: 1;
   transform: none;
-  transition-delay: 0.12s;
+  transition:
+    opacity 0.3s var(--ease-liquid) 0.12s,
+    transform 0.5s var(--ease-spring) 0.12s;
 }
 .nav-btn:active .nav-btn__label {
   transform: scale(0.97);
@@ -496,7 +500,7 @@ html.has-cursor .case * {
   max-width: var(--w, 100%);
   transition: transform 0.6s var(--ease-spring);
 }
-a.logo:hover img {
+.logo:hover img {
   transform: scale(1.08) rotate(-2deg);
 }
 .logo--cannes img {
@@ -586,9 +590,9 @@ a.logo:hover img {
   pointer-events: none;
 }
 .bite {
-  flex: 0 0 320px;
-  height: 320px;
-  border-radius: 32px;
+  flex: 0 0 260px;
+  height: 260px;
+  border-radius: 24px;
   overflow: hidden;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
@@ -601,6 +605,13 @@ a.logo:hover img {
 }
 .bite:hover img {
   transform: scale(1.05);
+}
+@media (min-width: 768px) {
+  .bite {
+    flex-basis: 320px;
+    height: 320px;
+    border-radius: 32px;
+  }
 }
 
 /* =========================================================
