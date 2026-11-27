@@ -12,7 +12,7 @@ export function initSmoothScroll(): Lenis | null {
   if (prefersReducedMotion()) return null;
 
   lenis = new Lenis({
-    lerp: 0.12,
+    lerp: 0.15,
     wheelMultiplier: 1,
     smoothWheel: true,
   });
